@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Out App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2 class="logo">Brain<span>Out</span></h2>
+        <button id="theme-btn" class="theme-btn">Dark Mode</button>
+    </header>
+
+    <div class="container">
+
+        <div id="start-screen" class="card">
+            <h1>Online Exam</h1>
+            <p class="small-text">Questions are random every time. You get 10 seconds for each question.</p>
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" maxlength="30" placeholder="Enter your name">
+
+            <div class="row">
+                <div>
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option value="All">Mixed (All)</option>
+                        <option value="GK">GK</option>
+                        <option value="Science">Science</option>
+                        <option value="Computer">Computer</option>
+                        <option value="Maths">Maths</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="level">Difficulty</label>
+                    <select id="level">
+                        <option value="All">Easy + Hard</option>
+                        <option value="easy">Easy</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="count">Questions</label>
+                    <select id="count">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="start-btn" class="btn">Start Exam</button>
+        </div>
+
+        <div id="quiz-screen" class="card" style="display:none;">
+            <div class="top-bar">
+                <span id="question-number"></span>
+                <span id="question-subject" class="tag"></span>
+                <span>Time: <b id="time">10</b>s</span>
+            </div>
+
+            <div class="progress">
+                <div id="progress-bar"></div>
+            </div>
+
+            <h3 id="question-text"></h3>
+            <div id="options"></div>
+
+            <button id="next-btn" class="btn" style="display:none;">Next Question</button>
+        </div>
+        
+        <div id="result-screen" style="display:none;">
+            <div class="card">
+                <h2 id="result-name"></h2>
+                <div class="big-score" id="result-score"></div>
+                <p id="result-message" class="small-text"></p>
+                <div id="result-details"></div>
+                <button id="again-btn" class="btn">Take Another Exam</button>
+                <button id="review-btn" class="btn light-btn">Review Answers</button>
+            </div>
+
+            <div class="card" id="review-box" style="display:none;"></div>
+
+            <div class="card">
+                <h2>Top 5 Scores</h2>
+                <table>
+                    <thead>
+                        <tr><th>#</th><th>Name</th><th>Subject</th><th>Score</th></tr>
+                    </thead>
+                    <tbody id="leaderboard"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>Made by: Arun | B.Tech CSE, 7th Semester</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
